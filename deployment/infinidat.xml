@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<agent name="infinidat" version="5.0.03.0">
+    <agent_description>Manages INFINIDAT  infinibox sync replicas volumes</agent_description>
+    <!--Platform the agent runs on-->
+    <platform>Cross-Platform</platform>
+    <!--Type of agent : script-DLL-Mixed-->
+    <agenttype>script</agenttype>
+    <!--The minimum VCS version needed for this agent-->
+    <minvcsversion>5.1</minvcsversion>
+    <!--The agent vendor name-->
+    <vendor>infinidat</vendor>
+    <!--Attributes list for this agent-->
+    <attributes>
+        <localbox type="str" dimension="Scalar" editable="True" important="True" mustconfigure="True" unique="False" persistent="True" range="" default="" displayname="local infinibox">
+            <attr_description>Specifies the local infinibox IP address or name </attr_description>
+        </localbox>
+        <UserLocal type="str" dimension="Scalar" editable="True" important="True" mustconfigure="False" unique="False" persistent="True" range="" default="" displayname="Local User">
+            <attr_description>Specifies the user for the local infinibox</attr_description>
+        </UserLocal>
+        <PasswordLocal type="str" dimension="Scalar" editable="True" important="True" mustconfigure="False" unique="False" persistent="True" range="" default="" displayname="Local Password">
+            <attr_description>Specifies the password for the local infinibox</attr_description>
+        </PasswordLocal>
+        <remotebox type="str" dimension="Scalar" editable="True" important="True" mustconfigure="True" unique="False" persistent="True" range="" default="" displayname="remote infinibox">
+            <attr_description>Specifies the remote infinibox IP address or name </attr_description>
+        </remotebox>
+        <UserRemote type="str" dimension="Scalar" editable="True" important="True" mustconfigure="False" unique="False" persistent="True" range="" default="" displayname="Remote User">
+            <attr_description>Specifies the user for the Remote infinibox</attr_description>
+        </UserRemote>
+        <PasswordRemote type="str" dimension="Scalar" editable="True" important="True" mustconfigure="False" unique="False" persistent="True" range="" default="" displayname="Remote Password">
+            <attr_description>Specifies the password for the remote infinibox</attr_description>
+	    </PasswordRemote>
+        <LocalCG type="str" dimension="Scalar" editable="True" important="True" mustconfigure="True" unique="False" persistent="True" range="" default="" displayname="Local CG Name">
+            <attr_description>name of local CG</attr_description>
+        </LocalCG>
+        <RemoteCG type="str" dimension="Scalar" editable="True" important="True" mustconfigure="True" unique="False" persistent="True" range="" default="" displayname="Remote CG Name">
+            <attr_description>name of remote CG</attr_description>
+        </RemoteCG>
+    </attributes>
+    <!--List of files installed by this agent-->
+    <agentfiles>
+	<file name="$VCSHOME/bin/infinidat/open" />
+	<file name="$VCSHOME/bin/infinidat/clean" />
+	<file name="$VCSHOME/bin/infinidat/online" />
+	<file name="$VCSHOME/bin/infinidat/monitor" />
+	<file name="$VCSHOME/bin/infinidat/offline" />
+	<file name="$VCSHOME/bin/infinidat/info" />
+	<file name="$VCSHOME/bin/infinidat/actions/PreSwitch" />
+	<file name="$VCSHOME/bin/infinidat/infinidatAgent.pm" />
+	<file name="$VCSHOME/bin/infinidat/attr_changed" />
+	<file name="$VCSHOME/bin/infinidat/HADRSLA.pm" />
+	<file name="$VCSHOME/bin/infinidat/actions/GetCurrentRPO" />
+	<file name="$VCSHOME/bin/infinidat/actions/ReportRPOData" />
+	<file name="$VCSHOME/bin/infinidat/actions/StartRPOComputation" />
+	<file name="$VCSHOME/bin/infinidat/actions/StopRPOComputation" />
+	<file name="$VCSHOME/bin/infinidat/actions/StartWriter" />
+    </agentfiles>
+</agent>
+

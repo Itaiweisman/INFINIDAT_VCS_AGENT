@@ -1,0 +1,13 @@
+type infinidat (
+	static int OpenTimeout = 180
+	static int RestartLimit = 1
+	static str ArgList[] = {localbox, UserLocal, PasswordLocal, remotebox, UserRemote, PasswordRemote, LocalCG, RemoteCG}
+	str localbox
+    	str UserLocal
+	str PasswordLocal
+	str remotebox
+    	str UserRemote
+	str PasswordRemote
+	str LocalCG
+	str RemoteCG
+)

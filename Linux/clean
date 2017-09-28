@@ -1,0 +1,30 @@
+eval 'exec /opt/VRTSperl/bin/perl -I `pwd`/../../lib -S $0 ${1+"$@"}'
+	if 0;
+use ag_i18n_inc;
+use infinidat;
+our $location="/tmp";
+
+### Handle Input
+my $ResName = shift;
+VCSAG_SET_ENVS ($ResName, 20091);
+our @required=qw(localbox UserLocal PasswordLocal remotebox UserRemote PasswordRemote LocalCG RemoteCG);
+our %pars=infinidat::check_pars(\@ARGV,\@required);
+
+sub deleteLockFile {
+	my $ret;
+	$file=$location . "/" . $ResName . ".lock";
+	#$file="/tmp/lock";
+	if (! -e $file ) {
+		VCSAG_LOG_MSG("I","lock file does not exist",10);
+		$ret=0;
+		}
+	else {
+	if ( unlink $file ) {
+  		VCSAG_LOG_MSG("I","removed locks file ; Resource cleaned",0); $ret=0; }
+	else {
+	  	VCSAG_LOG_MSG("E","Cannot remove lock file  ",3); $ret=15;   }
+	return $ret;
+}
+}
+$deleted=deleteLockFile();
+exit($deleted);
