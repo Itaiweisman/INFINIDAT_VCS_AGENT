@@ -27,7 +27,6 @@ sh ./deployment/addinfinidattype.sh
 
 
 ## Available Entry-Points
-![workflow](infinidat_vcs.png)
 
 The following Entry-Points are available when using this plugin:
 * Reset Entry-Points, delete the resource lock file to set agent state as offline:
