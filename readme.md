@@ -27,6 +27,7 @@ sh ./deployment/addinfinidattype.sh
 
 
 ## Available Entry-Points
+![workflow](infinidat_vcs.png)
 
 The following Entry-Points are available when using this plugin:
 * Reset Entry-Points, delete the resource lock file to set agent state as offline:
@@ -39,6 +40,9 @@ The following Entry-Points are available when using this plugin:
   * Monitor - Checks whether resource online operation has finished successfully, by verifying the existance of a lock file
 
 ## Online Entry Point - startup flow
+
+![workflow](infinidat_vcs.png)
+
 Resource startup process consist of two major steps: finding the values of replication role, link state, replica state and sync state.  Table below include the procedure taken while testing to simulate the states.
 
 Case | Role	| Link State | Replica State | Sync State | Simulated by | Expected Result/Action
@@ -69,7 +73,7 @@ T6 |Target | Up | ANY |OUT_OF_SYNC	 | | Error, does not create lock file
 T7 |Target | Up	|Remote is also a target | N/A	 | |Error, do not creates lock file
 T8 |Target |N/A	| Unknown | N/A	| | Error, does not create a lock file, Manual intervention required
 
-## Resource Attributes - 
+## Resource Attributes  
 Attribure | Description | Scope 
 --------- | ----------- | ------
 localbox  | InfiniBox name/IP which has the replica locally attached to the VCS host | has to be defined on each VCS host seperatly
@@ -81,7 +85,7 @@ PasswordRemote | Password for the user of the remote InfiniBox | can be set glob
 LocalCG | Name of the CG monitored on the local InfiniBox | has to be defined on each VCS host seperatly
 RemoteCG | Name of the CG monitored on the remote InfiniBox  | has to be define on each VCS host seperatly
 
-** Note: Passwords has to be encrypted before setting them on the resource attributes ** 
+**Note** Passwords has to be encrypted before setting them on the resource attributes 
 
 ### Encrypting password
 All passwords has to be encrypted before usage using VCS Encryption tool:
@@ -92,9 +96,10 @@ On Linux
 Enter Password: (Enter Plain Text password)
 Enter Again: (Enter the same password again)
 BNCnCNc
-
 ```
+
 On Windows
+```
 C:\program files\veritas\cluster server\bin\vcsencrypt -agent 
 Enter Password: (Enter Plain Text password)
 Enter Again: (Enter the same password again)
