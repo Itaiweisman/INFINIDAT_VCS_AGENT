@@ -25,9 +25,9 @@ our $OFFLINE=100;
 
 VCSAG_LOG_MSG("I","lock is $lock",1);
 if (-e $lock) {
-	print  "lock exist \n";
- 	VCSAG_LOG_MSG("I","Lock file exist - resource is ONLINE",2);
+	#print  "lock exist \n";
+ 	#VCSAG_LOG_MSG("I","Lock file exist - resource is ONLINE",2);
 	exit($ONLINE);} 
-VCSAG_LOG_MSG("E","Lock file does not exist - Resource is OFFLINE ",3);
+#VCSAG_LOG_MSG("E","Lock file does not exist - Resource is OFFLINE ",3);
 exit($OFFLINE);
 
