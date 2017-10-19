@@ -32,7 +32,7 @@ The following Entry-Points are available when using this plugin:
 * Reset Entry-Points, delete the resource lock file to set agent state as offline:
   * Open - Occurs when VCS engine starts
   * Close - Occurs when VCS engine terminates.
-  * Clean - Occurs when VCS engine fails to starts and gets into FAULTED state.
+  * Clean - Perfromed by the user, when VCS engine fails to starts and gets into FAULTED state.
 * Control Entry-Points
   * Online - Brings the resource online (according to the table on next section), creates a lock file when replica pairs are synchronized and cluster starts on source (change roles if needed)
   * Offline - Brings the resource offline, deletes lock file.
