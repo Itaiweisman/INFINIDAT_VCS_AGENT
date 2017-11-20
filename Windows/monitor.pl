@@ -20,7 +20,8 @@ if ($osname=~ m/MSWin/) {
 else {
 $location="/tmp/"; }
 our $lock=$location  . $ResName . ".lock";
-our $ONLINE=101;
+#our $ONLINE=101;
+our $ONLINE=110;
 our $OFFLINE=100;
 
 VCSAG_LOG_MSG("I","lock is $lock",1);
